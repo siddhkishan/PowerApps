@@ -1,0 +1,1 @@
+rk_interviewendtime: =DateAdd(rk_interviewstarttime,60,TimeUnit.Minutes)

@@ -1,0 +1,17 @@
+get your Power Platform environment URL
+
+Sign in to Power Apps.
+
+Click the gear icon (⚙️) in the top-right corner.
+
+Select Developer resources.
+
+A panel will open showing:
+
+Environment ID
+Web API endpoint
+
+Use the Web API Endpoint
+If you see something like https://orgxxxx.api.crm.dynamics.com/api/data/v9.2/, then your Environment URL is simply:
+
+https://orgxxxx.crm.dynamics.com

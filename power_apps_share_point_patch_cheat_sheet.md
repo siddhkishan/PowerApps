@@ -1,7 +1,5 @@
 # Power Apps — SharePoint Patch() Cheat Sheet
 
-A compact, beautifully organized cheat sheet for using `Patch()` in Power Apps with SharePoint lists. Copy this file into your GitHub repo (README.md or a dedicated `.md` file) to keep as a single source of truth.
-
 ---
 
 ## Table of contents
@@ -215,21 +213,4 @@ ForAll(
 
 ---
 
-## 7) How to use this file in GitHub
-
-1. Create a new file in your repo (e.g., `docs/Patch-CheatSheet.md` or `README-Patch.md`).
-2. Copy-paste this content or upload this file.
-3. Optionally add to a `docs/` folder and reference from your main README.
-
----
-
-## Want customization?
-If you want, I can:
-- Produce a **ready-to-commit** `README.md` with your list's internal names filled in (share the internal names),
-- Create a **Power Automate Flow** template to upload attachments and set taxonomy fields,
-- Or convert this into a **PDF** or **HTML** cheat sheet for sharing.
-
----
-
-*Created for you — feel free to edit and commit to your GitHub repo.*
 

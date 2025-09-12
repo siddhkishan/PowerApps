@@ -29,7 +29,18 @@
 - **Choice (single):** pass a record: `{ Value: "ChoiceLabel" }`.
 - **Choice (multi):** pass a table of records: `Table({ Value: "A" }, { Value: "B" })`.
 - **Lookup:** pass `{ Id: lookupId }` (Id of item in referenced list).
-- **Person/Group:** pass the `Claims` value: `{ Claims: "i:0#.f|membership|user@domain.com" }` (or use Office365Users to fetch profile).
+- **Person/Group:** pass the `Claims` value:
+  ```powerapps
+  {
+        '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+        Claims: "i:0#.f|membership|" & Lower(User().Email),
+        // Use the logged-in user email, or fetch another user's email
+        DisplayName: User().FullName,
+        // User's full name
+        Email: User().Email// User's email
+    }
+  ```
+
 
 ---
 

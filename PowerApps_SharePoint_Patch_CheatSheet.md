@@ -32,13 +32,16 @@
 - **Person/Group:** pass the `Claims` value:
   ```powerapps
   {
-        '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-        Claims: "i:0#.f|membership|" & Lower(User().Email),
-        // Use the logged-in user email, or fetch another user's email
-        DisplayName: User().FullName,
-        // User's full name
-        Email: User().Email// User's email
-    }
+  Claims: Concatenate(
+          "i:0#.f|membership|",
+          User().Email // Person email
+          ),
+          Department: "",
+          DisplayName: User().FullName,
+          Email: User().Email, // Person email
+          JobTitle: "",
+          Picture: ""
+  }
   ```
 
 
@@ -112,11 +115,13 @@ BoolField: chkControl.Value
 **Choice (single)**
 ```powerapps
 ChoiceField: { Value: "ChoiceLabel" }
+//Choice: { Value: cmb_choice.Selected.Value }
 ```
 
 **Choice (multi)**
 ```powerapps
 MultiChoiceField: Table({ Value: "A" }, { Value: "B" })
+// 'Multi Choice': ForAll(cmb_multi.SelectedItems, { Value: Value })
 ```
 
 **Lookup (single)**
@@ -131,7 +136,18 @@ LookupMulti: Table({ Id: 123 }, { Id: 456 })
 
 **Person / Group (single)**
 ```powerapps
-AssignedTo: { Claims: "i:0#.f|membership|user@domain.com" }
+PeopleField:
+{
+      Claims: Concatenate(
+          "i:0#.f|membership|",
+          User().Email // Person email cmb_PersonField.Selected.Email
+          ),
+          Department: "",
+          DisplayName: User().FullName, //cmb_PersonField.Selected.DisplayName
+          Email: User().Email, // Person email cmb_PersonField.Selected.Email
+          JobTitle: "",
+          Picture: ""
+}
 ```
 
 **Person / Group (multi)**
